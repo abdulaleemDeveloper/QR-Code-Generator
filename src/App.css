@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* Background animation */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(270deg, #4f46e5, #9333ea, #ec4899);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+}
+
+/* Card animation */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.8s ease forwards;
+}
+
+/* Title animation */
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 16px;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Input focus animation */
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  outline: none;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  transform: scale(1.02);
+}
+
+/* QR box animation */
+.qr-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 14px;
+  padding: 20px;
+  min-height: 220px;
+  animation: zoomIn 0.6s ease;
+}
+
+/* Placeholder pulse */
+.placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+  animation: pulse 1.5s infinite;
+}
+
+/* Footer fade */
+.footer {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #6b7280;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card {
+    padding: 18px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
+
+/* ================= Animations ================= */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
